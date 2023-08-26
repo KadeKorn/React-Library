@@ -1,6 +1,6 @@
 import React from "react";
 
-const Highlight = ({icon, title, para}) => {
+const highlight = ({icon, title, para}) => {
   return (
     <div className="highlight">
       <div className="highlight__img">
@@ -14,4 +14,4 @@ const Highlight = ({icon, title, para}) => {
   );
 }
 
-export default Highlight;
+export default highlight;
