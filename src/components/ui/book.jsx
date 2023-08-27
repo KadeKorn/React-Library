@@ -2,9 +2,12 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 const book = ({ book }) => {
-  return (
+ 
+ 
+ 
+    return (
     <div className="book">
-      <a href="">
+      <a href="/">
         <figure className="book__img--wrapper">
           <img src={book.url} alt="" />
         </figure>
@@ -15,11 +18,9 @@ const book = ({ book }) => {
         </a>
       </div>
       <div className="book__ratings">
-        <FontAwesomeIcon icon="star" />
-        <FontAwesomeIcon icon="star" />
-        <FontAwesomeIcon icon="star" />
-        <FontAwesomeIcon icon="star" />
-        <FontAwesomeIcon icon="star-half-alt" />
+       {
+        new Array(5).fill(0).map((_, index) => <FontAwesomeIcon icon="star" key={index} />)
+       }
       </div>
       <div className="book__price">
         {book.salePrice ? (
