@@ -1,3 +1,4 @@
+import Discounted from './components/Discounted.jsx';
 import Featured from './components/Featured.jsx';
 import Highlights from './components/Highlights.jsx';
 import Landing from './components/Landing.jsx';
@@ -11,6 +12,7 @@ function App() {
     <Landing />
     <Highlights />
     <Featured />
+    <Discounted />
    </div>
   );
 }
