@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { Link } from "react-router-dom";
 
 const book = ({ book }) => {
  
@@ -7,15 +8,15 @@ const book = ({ book }) => {
  
     return (
     <div className="book">
-      <a href="/">
+      <Link to="/">
         <figure className="book__img--wrapper">
           <img src={book.url} alt="" />
         </figure>
-      </a>
+      </Link>
       <div className="book__title">
-        <a href="/" className="book__title--link">
+        <Link to="/" className="book__title--link">
           {book.title}
-        </a>
+        </Link>
       </div>
       <div className="book__ratings">
        {
