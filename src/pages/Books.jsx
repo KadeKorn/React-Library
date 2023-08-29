@@ -1,6 +1,6 @@
 import React from "react";
-import { books } from "../data"
-import Book from "../components/ui/book"
+import { books } from "../data";
+import Book from "../components/ui/book";
 
 const Books = () => {
   return (
@@ -14,17 +14,18 @@ const Books = () => {
                   All Books
                 </h2>
                 <select id="filter" defaultValue="DEFAULT">
-                  <option value="DEFAULT" disabled >Sort</option>
+                  <option value="DEFAULT" disabled>
+                    Sort
+                  </option>
                   <option value="LOW_TO_HIGH">Price, Low to High</option>
                   <option value="HIGH_TO_LOW">Price, High to Low</option>
                   <option value="RATING">Ratings</option>
                 </select>
               </div>
               <div className="books">
-                {
-                    books.map((book =>
-                         (<Book book={book} key={book.id} />)
-  ))}
+                {books.map((book) => (
+                  <Book book={book} key={book.id} />
+                ))}
               </div>
             </div>
           </div>

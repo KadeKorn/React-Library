@@ -3,6 +3,7 @@ import Nav from "./components/Nav.jsx";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import Books from "./pages/Books.jsx";
+import { books } from "./data";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
         <Nav />
         <Routes>
           <Route path="/" exact Component={Home}></Route>
-          <Route path="/books" Component={Books}></Route>
+          <Route path="/books" element={<Books books={books} />} />
         </Routes>
         <Footer />
       </div>
