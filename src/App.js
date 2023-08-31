@@ -14,7 +14,7 @@ function App() {
         <Routes>
           <Route path="/" exact Component={Home}></Route>
           <Route path="/books" exact element={<Books books={books} />} />
-          <Route path="/books/1" element={<BookInfo books={books} />} />
+          <Route path="/books/:id" element={<BookInfo books={books} />} />
         </Routes>
         <Footer />
       </div>

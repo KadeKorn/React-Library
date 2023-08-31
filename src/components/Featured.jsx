@@ -1,5 +1,5 @@
 import React from 'react'
-import Book from './ui/book'
+import Book from './ui/Book'
 import { books } from '../data'
 
 
