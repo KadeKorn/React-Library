@@ -3,7 +3,7 @@ import React from "react";
 import { Link, useParams } from "react-router-dom";
 import Rating from "../components/ui/Rating";
 import Price from "../components/ui/Price";
-import Book from "../components/ui/Book";
+import Book from "../components/ui/book";
 
 const BookInfo = ({ books }) => {
   const { id } = useParams();
