@@ -5,6 +5,7 @@ import Home from "./pages/Home.jsx";
 import Books from "./pages/Books.jsx";
 import { books } from "./data";
 import BookInfo from "./pages/BookInfo.jsx";
+import Cart from "./pages/Cart.jsx";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" exact Component={Home}></Route>
           <Route path="/books" exact element={<Books books={books} />} />
           <Route path="/books/:id" element={<BookInfo books={books} />} />
+          <Route path="/cart" element={<Cart books={books} />} />
         </Routes>
         <Footer />
       </div>

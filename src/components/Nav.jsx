@@ -33,7 +33,7 @@ const Nav = () => {
             <FontAwesomeIcon icon="bars" />
           </button>
           <li className="nav__link">
-            <Link to="/" className="nav__link">
+            <Link to="/Cart" className="nav__link">
               <FontAwesomeIcon icon="shopping-cart" />
             </Link>
             <span className="cart__length">2</span>

@@ -4,7 +4,7 @@ import { books } from '../data'
 
 
 const Featured = () => {
-    console.log(books)
+    // console.log(books)
   return (
     <section id="features"> 
     {/* ideally this should be Featured or the component should have been named features, but the css is already witten */}
