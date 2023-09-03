@@ -5,7 +5,7 @@ import Rating from "../components/ui/Rating";
 import Price from "../components/ui/Price";
 import Book from "../components/ui/book";
 
-const BookInfo = ({ books, cart, addToCart }) => {
+const BookInfo = ({ books, addToCart }) => {
   const { id } = useParams();
   const book = books.find((book) => +book.id === +id);
 
