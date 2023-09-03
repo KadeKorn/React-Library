@@ -57,6 +57,7 @@ const Cart = () => {
                 Proceed to checkout
             </button>
           </div>
+          test
         </div>
       </main>
     </div>
