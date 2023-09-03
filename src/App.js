@@ -9,28 +9,10 @@ import Cart from "./pages/Cart.jsx";
 import React, { useState, useEffect } from "react";
 
 function App() {
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState([]); // initializes it as an empty array
 
   function addToCart(book) {
-    const dupeItem = cart.find((item) => +item.id === +book.id);
-    if (dupeItem) {
-      setCart(
-        cart.map((item) => {
-          if (item.id === dupeItem.id) {
-            return {
-              ...item,
-              quantity: item.quantity + 1,
-            };
-          }
-          else{
-            return item
-          }
-        })
-      );
-    }
-    else {
-      setCart([...cart, {...book, quantity: 1}])
-    }
+    
   }
 
   useEffect(() => {
