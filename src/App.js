@@ -6,8 +6,14 @@ import Books from "./pages/Books.jsx";
 import { books } from "./data";
 import BookInfo from "./pages/BookInfo.jsx";
 import Cart from "./pages/Cart.jsx";
-
+import React, {useState} from "react";
 function App() {
+  const [cart,setCart] = useState([]);
+
+  function addToCart(book) {
+    setCart([...cart, book]);
+  }
+  
   return (
     <Router>
       <div>
@@ -15,8 +21,8 @@ function App() {
         <Routes>
           <Route path="/" exact Component={Home}></Route>
           <Route path="/books" exact element={<Books books={books} />} />
-          <Route path="/books/:id" element={<BookInfo books={books} />} />
-          <Route path="/cart" element={<Cart books={books} />} />
+          <Route path="/books/:id" element={<BookInfo books={books} cart={cart} addToCart={addToCart} />} />
+          <Route path="/cart" element={<Cart cart={cart} />} />
         </Routes>
         <Footer />
       </div>

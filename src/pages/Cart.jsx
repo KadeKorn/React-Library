@@ -1,7 +1,7 @@
 import React from "react";
 import book from "../components/ui/book";
 
-const Cart = () => {
+const Cart = ({ cart }) => {
   return (
     <div id="books__body">
       <main id="books__main">
@@ -56,7 +56,7 @@ const Cart = () => {
               <span>Total</span>
               <span>$10.00</span>
             </div>
-            <button className="btn btn__checkout no-cursor">
+            <button className="btn btn__checkout no-cursor" onClick={() => alert('not implemented yet buddy')}> 
               Proceed to checkout
             </button>
           </div>
