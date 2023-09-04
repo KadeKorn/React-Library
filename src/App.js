@@ -12,7 +12,7 @@ function App() {
   const [cart, setCart] = useState([]); // initializes it as an empty array
 
   function addToCart(book) {
-    setCart([...cart,book])
+    setCart([...cart,{...book, quantity:1}])
   }
 
   useEffect(() => {
