@@ -1,7 +1,7 @@
 import React from "react";
  import book from "../components/ui/book";
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, changeQuantity }) => {
   return (
     <div id="books__body">
       <main id="books__main">
@@ -37,6 +37,8 @@ const Cart = ({ cart }) => {
                         min={0}
                         max={99}
                         className="cart__input"
+                        onChange={(event) => changeQuantity(book, event.target.value)}
+                        value={book.quantity}
                       />
                     </div>
                     <div className="cart__total">$10.00</div>

@@ -15,8 +15,8 @@ function App() {
     setCart([...cart,{...book, quantity:1}])
   }
 
-  function changeQuantity(book){
-    console.log(book.quantity)
+  function changeQuantity(book, quantity){
+    console.log(book, quantity)
   }
 
   useEffect(() => {
