@@ -93,6 +93,6 @@ const calculateTotal = () => {
     </div>
   );
 };
-
+<div className="test" />
 export default Cart;
 
