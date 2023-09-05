@@ -2,6 +2,27 @@ import React from "react";
  import book from "../components/ui/book";
 
 const Cart = ({ cart, changeQuantity }) => {
+const TAX_RATE = 0.10; //10%
+
+  const calculateTotalForBook = (book) => {
+  const price = book.salePrice || book.originalPrice;
+  return price * book.quantity
+}
+
+const calculateSubtotal = () => {
+  return cart.reduce((acc, book) => acc + calculateTotalForBook(book), 0);
+}
+
+const calculateTax = () => {
+  return calculateSubtotal() * TAX_RATE;
+}
+
+const calculateTotal = () => {
+  const total = calculateSubtotal() + calculateTax();
+  return total;
+}
+
+
   return (
     <div id="books__body">
       <main id="books__main">
@@ -41,7 +62,7 @@ const Cart = ({ cart, changeQuantity }) => {
                         value={book.quantity}
                       />
                     </div>
-                    <div className="cart__total">$10.00</div>
+                    <div className="cart__total">${calculateTotalForBook(book).toFixed(2)}</div>
                   </div>
                 ))}
               </div>
@@ -49,15 +70,15 @@ const Cart = ({ cart, changeQuantity }) => {
             <div className="total">
               <div className="total__item total__sub--total">
                 <span>Subtotal</span>
-                <span>$9.00</span>
+                <span>${calculateSubtotal().toFixed(2)}</span>
               </div>
               <div className="total__item total__tax">
                 <span>Tax</span>
-                <span>$1.00</span>
+                <span>${calculateTax().toFixed(2)}</span>
               </div>
               <div className="total__item total__price">
                 <span>Total</span>
-                <span>$10.00</span>
+                <span>${calculateTotal().toFixed(2)}</span>
               </div>
               <button
                 className="btn btn__checkout no-cursor"
