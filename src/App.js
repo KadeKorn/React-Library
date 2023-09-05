@@ -20,7 +20,7 @@ function App() {
       if (item.id === book.id) {
         return{
           ...item,
-          quantity: quantity,
+          quantity: +quantity,
         }
       }
       else {
