@@ -9,9 +9,10 @@ const Book = ({ book }) => {
   useEffect(() => {
     const imageLoader = new Image();
     imageLoader.src = book.url;
-
     imageLoader.onload = () => {
-      setImgSrc(book.url);
+      setTimeout(() => {
+        setImgSrc(imageLoader.src);
+      }, 1500);
     };
 
     // Optional: Handle image loading errors
