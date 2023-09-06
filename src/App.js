@@ -24,10 +24,17 @@ function App() {
   }
 
   const removeBookFromCart = (bookToRemove) => {
-    const updatedCart = cart.filter(book => book.id !== bookToRemove.id);
+    const updatedCart = cart.filter((book) => book.id !== bookToRemove.id);
     setCart(updatedCart);
-  }
+  };
 
+  function numberOfItems() {
+    let counter = 0;
+    cart.forEach((item) => {
+      counter += item.quantity;
+    });
+    return counter;
+  }
 
   useEffect(() => {
     console.log(cart);
@@ -36,7 +43,7 @@ function App() {
   return (
     <Router>
       <div>
-        <Nav />
+        <Nav numberOfItems={numberOfItems()} />
         <Routes>
           <Route path="/" exact Component={Home}></Route>
           <Route path="/books" exact element={<Books books={books} />} />
