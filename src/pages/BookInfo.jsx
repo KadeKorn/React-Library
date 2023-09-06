@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Rating from "../components/ui/Rating";
 import Price from "../components/ui/Price";
-import Book from "../components/ui/book";
+import Book from "../components/ui/Book";
 
 const BookInfo = ({ books, addToCart, cart }) => {
   const { id } = useParams();

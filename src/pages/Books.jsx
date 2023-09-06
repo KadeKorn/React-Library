@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Book from "../components/ui/book"
+import Book from "../components/ui/Book"
 
 
 const Books = ({ books: initialBooks }) => {
