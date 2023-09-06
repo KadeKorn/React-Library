@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Rating from "./Rating";
 import Price from "./Price";
@@ -6,12 +6,16 @@ import Price from "./Price";
 const Book = ({ book }) => {
   const [imgSrc, setImgSrc] = useState(null);
 
+  const mountedRef = useRef(true);
+
   useEffect(() => {
     const imageLoader = new Image();
     imageLoader.src = book.url;
     imageLoader.onload = () => {
       setTimeout(() => {
-        setImgSrc(imageLoader.src);
+        if (mountedRef.current) {
+          setImgSrc(imageLoader.src);
+        }
       }, 1500);
     };
 
@@ -19,7 +23,14 @@ const Book = ({ book }) => {
     imageLoader.onerror = () => {
       console.error("Failed to load the image:", book.url);
     };
-  }, [book.url]); // Dependency on book.url ensures this effect runs if the url changes
+
+    return () => {
+      // When the component unmounts
+      mountedRef.current = false;
+    };
+}, [book.url]);
+
+
 
   return (
     <div className="book">
