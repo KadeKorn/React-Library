@@ -14,6 +14,8 @@ function App() {
   function addToCart(book) {
     setCart([...cart, { ...book, quantity: 1 }]);
   }
+  //This function ^, addToCart, takes a book object as a parameter and adds it to the current cart array with an additional property, quantity, set to 1.
+  // It utilizes the spread operator to maintain previous items in the cart and to add the new book entry.
 
   function changeQuantity(book, quantity) {
     setCart(
