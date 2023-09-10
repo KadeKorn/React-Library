@@ -18,7 +18,6 @@ const Landing = () => {
                                 </button>
                             </Link>
                         </div>
-                        <div className="Streal"></div>
                         <figure className="header__img--wrapper">
                             <img src={UndrawBooks} alt="" />
                         </figure>
