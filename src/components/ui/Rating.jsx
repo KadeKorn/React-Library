@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
 const Rating = ({ rating }) => {
+  // ({rating}) is an ES6 --> Destructuring an obj to get exactly what you want
   return (
     <div className="book__ratings"> 
       {new Array(Math.floor(rating)).fill(0).map((_, index) => (
